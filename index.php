@@ -36,12 +36,12 @@
             'distance_to_center' => 50
         ],
     ];
-   foreach($hotels as $hotel){
+  /*foreach($hotels as $hotel){
     foreach($hotel as $key => $criteria){
         echo "$key : $criteria";
         echo "<br>";
     }
-   };
+   };*/
    
 ?>
 <!DOCTYPE html>
@@ -53,7 +53,21 @@
     <title>PHP-Hotel</title>
 </head>
 <body>
-    <div></div>
+    <div class="container">
+        <?php foreach($hotels as $hotel){
+            foreach($hotel as $key => $criteria){?>
+           <div class="row">
+                <div class="col">
+               <?php if($key === 'name') {
+                    echo "<div> $key : $criteria </div>"
+                ;}
+                else if($key === 'description'){
+                    echo "<div> $key : $criteria </div>"
+                ;}?>
+                </div>
+            <?php }
+        }; ?>
+    </div>
     
 </body>
 </html>
